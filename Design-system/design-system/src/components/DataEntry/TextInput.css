@@ -1,0 +1,144 @@
+/* TextInput.css */
+
+/* Container Styles */
+.text-input-wrapper {
+  margin-bottom: 1rem;
+  width: auto;
+}
+
+.text-input-wrapper.full-width {
+  width: 100%;
+}
+
+/* Label Styles */
+.text-input-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.text-input-label.disabled {
+  color: #a0aec0;
+}
+
+.text-input-label.required::after {
+  content: ' *';
+  color: #e53e3e;
+}
+
+/* Input Container */
+.text-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+  background-color: white;
+}
+
+.text-input-container.error {
+  border-color: #e53e3e;
+}
+
+.text-input-container.disabled {
+  background-color: #f7fafc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.text-input-container:focus-within {
+  border-color: #3182ce;
+  box-shadow: 0 0 0 1px #3182ce;
+}
+
+/* Input Field */
+.text-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #2d3748;
+}
+
+.text-input.disabled {
+  color: #a0aec0;
+}
+
+.text-input::placeholder {
+  color: #a0aec0;
+}
+
+.text-input:read-only {
+  background-color: #edf2f7;
+  cursor: default;
+}
+
+/* Sizes */
+.text-input.small {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.text-input.medium {
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+.text-input.large {
+  padding: 1rem;
+  font-size: 1.125rem;
+}
+
+/* With Icon */
+.text-input.has-icon {
+  padding-left: 2.5rem;
+}
+
+/* Icon */
+.text-input-icon {
+  position: absolute;
+  left: 0.75rem;
+  color: #718096;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Messages */
+.text-input-error {
+  color: #e53e3e;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.text-input-help {
+  color: #718096;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* Focus Styles */
+.text-input:focus-visible {
+  outline: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .text-input.medium,
+  .text-input.large {
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+  
+  .text-input.has-icon {
+    padding-left: 2.25rem;
+  }
+  
+  .text-input-icon {
+    left: 0.5rem;
+  }
+}

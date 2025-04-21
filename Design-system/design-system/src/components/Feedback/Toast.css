@@ -1,0 +1,189 @@
+/* src/components/Feedback/Toast.css */
+.toast {
+    /* Base styles */
+    position: fixed;
+    z-index: 1000;
+    min-width: 250px;
+    max-width: 400px;
+    padding: 1rem;
+    border-radius: var(--border-radius-md, 0.375rem);
+    box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06));
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    animation: toast-fade-in 0.3s ease-out;
+    font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, sans-serif);
+  }
+  
+  /* Animation */
+  @keyframes toast-fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes toast-fade-out {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(20px); }
+  }
+  
+  .toast--closing {
+    animation: toast-fade-out 0.3s ease-out forwards;
+  }
+  
+  /* Positions */
+  .toast--top-right {
+    top: 1rem;
+    right: 1rem;
+  }
+  
+  .toast--top-left {
+    top: 1rem;
+    left: 1rem;
+  }
+  
+  .toast--bottom-right {
+    bottom: 1rem;
+    right: 1rem;
+  }
+  
+  .toast--bottom-left {
+    bottom: 1rem;
+    left: 1rem;
+  }
+  
+  /* Variants */
+  .toast--info {
+    background-color: var(--toast-info-bg, #EFF6FF);
+    color: var(--toast-info-text, #1E40AF);
+    border-left: 4px solid var(--toast-info-border, #3B82F6);
+  }
+  
+  .toast--success {
+    background-color: var(--toast-success-bg, #ECFDF5);
+    color: var(--toast-success-text, #065F46);
+    border-left: 4px solid var(--toast-success-border, #10B981);
+  }
+  
+  .toast--warning {
+    background-color: var(--toast-warning-bg, #FEF3C7);
+    color: var(--toast-warning-text, #92400E);
+    border-left: 4px solid var(--toast-warning-border, #F59E0B);
+  }
+  
+  .toast--error {
+    background-color: var(--toast-error-bg, #FEE2E2);
+    color: var(--toast-error-text, #B91C1C);
+    border-left: 4px solid var(--toast-error-border, #EF4444);
+  }
+  
+  /* Elements */
+  .toast__icon {
+    flex-shrink: 0;
+    font-size: 1.25rem;
+  }
+  
+  .toast__message {
+    flex-grow: 1;
+    font-size: 0.875rem;
+  }
+  
+  .toast__close {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding: 0.25rem;
+    margin-left: auto;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+  
+  .toast__close:hover {
+    opacity: 1;
+  }
+  
+  .toast__close:focus {
+    outline: 2px solid var(--focus-outline, #3B82F6);
+    outline-offset: 2px;
+  }
+  
+  .toast__progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    transform-origin: left;
+  }
+  
+  .toast--info .toast__progress {
+    background: var(--toast-info-border, #3B82F6);
+  }
+  
+  .toast--success .toast__progress {
+    background: var(--toast-success-border, #10B981);
+  }
+  
+  .toast--warning .toast__progress {
+    background: var(--toast-warning-border, #F59E0B);
+  }
+  
+  .toast--error .toast__progress {
+    background: var(--toast-error-border, #EF4444);
+  }
+  
+  @keyframes toast-progress {
+    from { transform: scaleX(1); }
+    to { transform: scaleX(0); }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .toast {
+      max-width: 90%;
+      left: 50%;
+      right: auto;
+      transform: translateX(-50%);
+    }
+  
+    .toast--top-right,
+    .toast--top-left {
+      top: 1rem;
+    }
+  
+    .toast--bottom-right,
+    .toast--bottom-left {
+      bottom: 1rem;
+    }
+  }
+  
+  /* Dark Mode */
+  [data-theme="dark"] {
+    --toast-info-bg: #1E3A8A;
+    --toast-info-text: #EFF6FF;
+    --toast-info-border: #60A5FA;
+  
+    --toast-success-bg: #065F46;
+    --toast-success-text: #D1FAE5;
+    --toast-success-border: #34D399;
+  
+    --toast-warning-bg: #92400E;
+    --toast-warning-text: #FEF3C7;
+    --toast-warning-border: #FBBF24;
+  
+    --toast-error-bg: #991B1B;
+    --toast-error-text: #FEE2E2;
+    --toast-error-border: #F87171;
+  }
+  
+  /* Forced Colors Mode */
+  @media (forced-colors: active) {
+    .toast {
+      border: 2px solid CanvasText !important;
+    }
+    
+    .toast__close {
+      forced-color-adjust: none;
+      color: ButtonText !important;
+    }
+  }

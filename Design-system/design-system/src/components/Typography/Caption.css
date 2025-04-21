@@ -1,0 +1,72 @@
+/* Base Styles */
+.caption {
+  font-size: 0.75rem;
+  line-height: 1.25;
+  font-weight: 400;
+  margin: 0;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+/* Variants */
+.caption--strong {
+  font-weight: 500;
+}
+
+/* Color Variants */
+.caption--default {
+  color: var(--caption-color-default, #4B5563);
+}
+
+.caption--primary {
+  color: var(--caption-color-primary, #3B82F6);
+}
+
+.caption--error {
+  color: var(--caption-color-error, #EF4444);
+}
+
+.caption--success {
+  color: var(--caption-color-success, #10B981);
+}
+
+/* States */
+.caption--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Dark Mode */
+[data-theme="dark"] .caption--default {
+  --caption-color-default: #9CA3AF;
+}
+
+[data-theme="dark"] .caption--primary {
+  --caption-color-primary: #60A5FA;
+}
+
+[data-theme="dark"] .caption--error {
+  --caption-color-error: #F87171;
+}
+
+[data-theme="dark"] .caption--success {
+  --caption-color-success: #34D399;
+}
+
+/* Responsive Behavior */
+@media (max-width: 600px) {
+  .caption {
+    font-size: 0.6875rem;
+  }
+}
+
+/* Forced Colors Mode */
+@media (forced-colors: active) {
+  .caption {
+    color: CanvasText !important;
+  }
+  
+  .caption--disabled {
+    opacity: 1;
+    color: GrayText !important;
+  }
+}

@@ -1,0 +1,95 @@
+/* AlertBanner.css */
+.alert-banner {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 0.375rem;
+    margin: 0.5rem 0;
+    width: 100%;
+    box-sizing: border-box;
+    transition: opacity 0.3s ease;
+  }
+  
+  .alert-banner.info {
+    background-color: #3b82f6;
+    color: white;
+  }
+  
+  .alert-banner.success {
+    background-color: #22c55e;
+    color: white;
+  }
+  
+  .alert-banner.warning {
+    background-color: #eab308;
+    color: black;
+  }
+  
+  .alert-banner.error {
+    background-color: #ef4444;
+    color: white;
+  }
+  
+  .alert-banner__content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .alert-banner__icon {
+    font-size: 1.25rem;
+    display: flex;
+  }
+  
+  .alert-banner__message {
+    flex: 1;
+  }
+  
+  .alert-banner__close-button {
+    margin-left: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.25rem;
+    line-height: 1;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .alert-banner__close-button:focus {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+  
+  .alert-banner.info .alert-banner__close-button {
+    color: white;
+  }
+  
+  .alert-banner.success .alert-banner__close-button {
+    color: white;
+  }
+  
+  .alert-banner.warning .alert-banner__close-button {
+    color: black;
+  }
+  
+  .alert-banner.error .alert-banner__close-button {
+    color: white;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .alert-banner {
+      padding: 0.75rem;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .alert-banner__close-button {
+      align-self: flex-end;
+      margin-top: 0.5rem;
+    }
+  }

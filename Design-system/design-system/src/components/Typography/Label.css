@@ -1,0 +1,49 @@
+/* src/components/Typography/Label.css */
+.label {
+    /* Layout */
+    display: block;
+    margin-bottom: 0.5rem;
+    
+    /* Typography */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 0.875rem; /* 14px */
+    font-weight: 500;
+    line-height: 1.25;
+    color: #2563EB; /* Blue color */
+    
+    /* Accessibility */
+    cursor: pointer;
+    transition: color 150ms ease-out;
+  }
+  
+  /* Required indicator */
+  .label__required {
+    color: var(--label-required-color, #DC2626);
+    margin-left: 0.25rem;
+  }
+  
+  /* Disabled state */
+  .label--disabled {
+    color: var(--label-disabled-color, #9CA3AF);
+    cursor: not-allowed;
+  }
+  
+  /* Dark Mode */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --label-color: #E5E7EB;
+      --label-required-color: #F87171;
+      --label-disabled-color: #6B7280;
+    }
+  }
+  
+  /* High Contrast Mode */
+  @media (forced-colors: active) {
+    .label {
+      color: CanvasText !important;
+      font-size: 1em !important;
+    }
+    .label__required {
+      color: Mark !important;
+    }
+  }

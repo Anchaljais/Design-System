@@ -1,0 +1,103 @@
+/* DatePicker.css */
+
+/* Container Styles */
+.date-picker-container {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  
+  .date-picker-container.fit-width {
+    width: fit-content;
+  }
+  
+  /* Label Styles */
+  .date-picker-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #4a5568;
+  }
+  
+  .date-picker-label.disabled {
+    color: #a0aec0;
+  }
+  
+  .date-picker-label.required::after {
+    content: ' *';
+    color: #e53e3e;
+  }
+  
+  /* Input Wrapper */
+  .date-picker-wrapper {
+    position: relative;
+  }
+  
+  .date-picker-wrapper.error .react-datepicker__input-container input {
+    border-color: #e53e3e;
+  }
+  
+  .date-picker-wrapper.disabled .react-datepicker__input-container input {
+    background-color: #f7fafc;
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+  
+  /* Input Styles */
+  .react-datepicker__input-container {
+    width: 100%;
+  }
+  
+  .react-datepicker__input-container input {
+    width: 100%;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    background-color: white;
+    color: #2d3748;
+    transition: all 0.2s ease;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+  
+  .react-datepicker__input-container input:focus {
+    outline: none;
+    border-color: #3182ce;
+    box-shadow: 0 0 0 1px #3182ce;
+  }
+  
+  .react-datepicker__input-container input:disabled {
+    cursor: not-allowed;
+  }
+  
+  .react-datepicker__input-container input::placeholder {
+    color: #a0aec0;
+  }
+  
+  /* Size Variants */
+  .date-picker-wrapper.sm .react-datepicker__input-container input {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+  
+  .date-picker-wrapper.lg .react-datepicker__input-container input {
+    padding: 1rem 1.25rem;
+    font-size: 1.125rem;
+  }
+  
+  /* Calendar Icon */
+  .date-picker-icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #2d3748;
+  }
+  
+  /* Error Message */
+  .date-picker-error {
+    color: #e53e3e;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+  }

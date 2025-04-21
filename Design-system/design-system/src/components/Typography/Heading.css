@@ -1,0 +1,75 @@
+/* src/components/Typography/Heading.css */
+.heading {
+    font-weight: bold;
+    line-height: 1.25;
+    letter-spacing: -0.025em;
+    margin: 0;
+    transition: color 0.3s ease;
+  }
+  /* src/components/Typography/Heading.css */
+:root {
+    /* Light theme defaults */
+    --color-primary-900: #1E40AF;
+    --color-primary-100: #DBEAFE;
+    /* Other colors... */
+  }
+  
+  [data-theme="dark"] {
+    /* Dark theme overrides */
+    --color-primary-900: #DBEAFE;
+    --color-primary-100: #1E40AF;
+    /* Other dark mode colors... */
+  }
+  
+  .heading {
+    font-weight: bold;
+    line-height: 1.25;
+    letter-spacing: -0.025em;
+    margin: 0;
+    transition: color 0.3s ease;
+  }
+  
+  /* Color classes using CSS variables */
+  .heading--color-primary {
+    color: var(--color-primary-900);
+  }
+  
+  /* Dark mode colors */
+[data-theme="dark"] .heading--color-primary { color: var(--color-primary-100); }
+[data-theme="dark"] .heading--color-secondary { color: var(--color-secondary-100); }
+  /* Size classes */
+  .heading--size-1 { font-size: 3.75rem; }
+  .heading--size-2 { font-size: 3rem; }
+  .heading--size-3 { font-size: 2.25rem; }
+  .heading--size-4 { font-size: 1.875rem; }
+  .heading--size-5 { font-size: 1.5rem; }
+  .heading--size-6 { font-size: 1.25rem; }
+  
+  /* Color classes */
+  .heading--color-primary { color: #1E40AF; }
+  .heading--color-secondary { color: #78350F; }
+  .heading--color-danger { color: #DC2626; }
+  .heading--color-success { color: #16A34A; }
+  .heading--color-warning { color: #D97706; }
+  .heading--color-light { color: #F3F4F6; }
+  .heading--color-dark { color: #111827; }
+  
+  /* Responsive sizes */
+  @media (min-width: 768px) {
+    .heading--size-1 { font-size: 4.5rem; }
+    .heading--size-2 { font-size: 3.75rem; }
+    .heading--size-3 { font-size: 3rem; }
+    .heading--size-4 { font-size: 2.25rem; }
+    .heading--size-5 { font-size: 1.875rem; }
+    .heading--size-6 { font-size: 1.5rem; }
+  }
+  
+  @media (min-width: 1024px) {
+    .heading--size-1 { font-size: 6rem; }
+    .heading--size-2 { font-size: 4.5rem; }
+    .heading--size-3 { font-size: 3.75rem; }
+    .heading--size-4 { font-size: 3rem; }
+    .heading--size-5 { font-size: 2.25rem; }
+    .heading--size-6 { font-size: 1.875rem; }
+  }
+  

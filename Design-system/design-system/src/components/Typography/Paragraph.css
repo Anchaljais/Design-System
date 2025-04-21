@@ -1,0 +1,28 @@
+/* src/components/Typography/Paragraph.css */
+.paragraph {
+    /* Base styles */
+    margin: 0 0 1.25rem 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6; /* Fixed from 10.6 to normal value */
+    color: var(--paragraph-color, #1F2937);
+    transition: color 150ms ease-out;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased; /* Improves rendering */
+  }
+  
+  /* Variants */
+  .paragraph--default {
+    font-size: 1rem;
+  }
+  
+  .paragraph--lead {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--paragraph-lead-color, #111827);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+  
+  /* Ensure Inter font weights are loaded */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
